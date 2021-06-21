@@ -1,0 +1,5 @@
+const DEFAULT_SENTENCES_NUMBER = 3;
+
+module.exports = {
+	DEFAULT_SENTENCES_NUMBER,
+};

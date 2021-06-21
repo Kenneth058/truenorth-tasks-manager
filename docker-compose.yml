@@ -1,0 +1,33 @@
+version: "3.8"
+services: 
+  tndb:
+    build: ./truenorth-db
+    ports:
+      - "5432:5432"
+  tnrs:
+    build: ./random-sentences
+    ports: 
+      - "5000:5000"
+  tnapi:
+    build: ./truenorth-api
+    depends_on:
+      - tndb
+      - tnrs
+    environment:
+      - PORT=4000
+      - PGUSER=postgres
+      - PGHOST=tndb
+      - PGPASSWORD=truenorthpass
+      - PGDATABASE=truenorthdb
+      - PGPORT=5432
+      - HIPSUMURL=https://hipsum.co
+      - RANDOMURL=http://tnrs:5000
+      - HIPSUMAVAILABLE=false
+    ports:
+      - "4000:4000"
+  tnsite:
+    build: ./truenorth-site
+    depends_on:
+      - tnapi
+    ports:
+      - "3000:3000"
