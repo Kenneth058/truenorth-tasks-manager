@@ -2,7 +2,7 @@
 
 ## Requirements
 1. In order to run this project, you must have installed docker and docker-compose on your machine.
-2. In case the endpoint `https://hipsum.co/the-api/` is returning a 404 error, you must be sure that the variable `HIPSUMAVAILABLE` in the **docker-compose** file is set as `false`. If the endpoint is working, you should change the environment variable as `true`.
+2. In case the url `https://hipsum.co/the-api/` is returning a 404 error, you must be sure that the variable `HIPSUMAVAILABLE` in the **docker-compose** file is set as `false`. If the endpoint is working, you should change the environment variable as `true`.
 
 ## Important note
 A `random sentences generator API` was built in order to replace `hipsum` API, because this wasn't working and was retrieving a 404 error. This random sentences generator API works exactly as hipsum does.
@@ -40,7 +40,7 @@ URL: http://localhost:4000/stored-tasks
 
 ## Using Task Site
 
-A responsive React site was made in order to list all tasks stored in postgres database. Here, a task selected can be completed, changing its color to green. Endpoint:
+A responsive React site was made in order to list all tasks stored in postgres database. Here, a task selected can be completed, changing its color to green. URL:
 
 ```
 http://localhost:3000
@@ -48,7 +48,7 @@ http://localhost:3000
 
 ## Using Random Sentences API
 
-This API was built in order to replace hipsum API. It returns a text with the number of sentences as you established in parameter **sentences**. Next endpoint can be used:
+This API was built in order to replace hipsum API. It returns a text with the number of sentences as you established in parameter **sentences**. If the parameter is omitted, three sentences will be returned. Next url can be used:
 
 ```
 http://localhost:5000/?sentences=6
